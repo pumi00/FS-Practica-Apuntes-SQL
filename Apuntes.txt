@@ -1,0 +1,140 @@
+SQL: por sus siglas en ingles Strcutured Query Language y en español lenguaje de consulta estructurada, es un lenguaje
+    usado para la gestion de base de datos relacionales que permite especificar diversos tipos de operaciones en ellos.
+
+
+
+En SQL es una convencion escribir los comandos en mayuculas y las variables , etc en minusculas
+
+
+
+COMANDOS BASICOS:
+
+    Crear una tabla:
+
+        CREATE TABLE table_name (
+            column_1 data_type,
+            column_2 data_type,
+            column_3 data_type
+        )
+
+
+
+    Insertar una tabla:
+
+        INSERT INTO celebs (id, name, age)
+        VALUES (1, "Jutin Bieber", 21);
+
+
+
+    Hacer consulta a una tabla ( * es un comodin que permite acceder a todas las tablas sin nombrarlas una por una):
+
+        SELECT * FROM celebs:
+
+
+    Consulta de una fila:
+
+        SELECT name FROM celebs
+
+
+    Editar una columna:
+
+        UPDATE celebs
+        SET age = 22
+        WHERE id = 1;
+
+        ( El punto y coma se pone al final de la consulta que quiere decir que se puede usar por ejemplo si el 
+          SET estuviera al final?.... Pues si y no.
+          Porque si dejamos el SET al final esto conllevaria a que se actualizaran todas las tablas y para que esto
+          no pase tendremos que decirle cual de las tablas queremos modificar.
+        )
+
+
+    Insertar una columna:
+
+        ALTER TABLE celebs ADD COLUMN
+        twitter_handle TEXT;
+
+
+    Un valor null representa informacion faltante o perdida. Al crear una nueva columna en blanco todos sus datos seran
+    null.
+
+    Borrar filas:
+
+        DELETE FROM celebs WHERE twitter_handle IS NULL;
+
+
+    
+    CONSULTAS:
+
+
+        Consulta de las columnas:
+
+            SELECT name, imdb_rating FROM movies;
+
+
+        Realizar una consulta sin mostrar duplicaciones:
+
+            SELECT DISTINCT genre FROM movies;
+
+
+
+        Para filtrar consultas se utiliza WHERE
+
+            SELECT * FROM movies WHERE imdb_rating > 8;
+
+            Esto lo que hace es que selecciona la tabla movies y muestra el imdb_rating sea mayor a 8.
+
+
+        
+        Operadores comunes que se suelen usar con WHERE:
+
+            = equals
+            != not equals
+            > greater than
+            < less than
+            >= greater than or equal than
+            <= less than pr equal than
+
+            LIKE es un operador especial que se usa con WHERE para buscar todas las coincidencias que encajen en el patron
+            que se imponga.
+
+            LIKE no es sensible a las mayusculas y minusculas.
+
+            SELECT * FROM movies
+            WHERE name LIKE 'Se_en';
+
+            En este ejemplo se busca una tabla "movies", columna "name", todos los nombres que coincidan con "Se_en" 
+            siendo el _ un caracter comodin
+
+
+
+            El caracter % es un comodin, indica cero o mas letras faltantes:
+
+            A% coincide con todos los que comiencen con la letra A.
+            %a coincide con todos los que terminen con la letra a.
+            %man% coincide con todos los que contengan la palabra man.
+
+
+            BETWEEN:
+
+                Es un operador especial que se usa con WHERE para buscar todas las coincidencias en un intervalo. Pueden ser
+                numeros, texto o fechas.
+
+                SELECT * FROM movies
+                WHERE  year BETWEEN  1990 and 2000;
+
+                Se puede reproducir aun mas la busqueda añadiendo aun mas restricciones a la consulta:
+
+                SELECT * FROM movies
+                WHERE year BETWEEN  1990 AND 2000
+                AND  genre = "comedy";
+
+
+                El operador AND se usa para combinar multiples condiciones , para que coincida un resultado tiene que ser
+                verdadero a todas las condiciones. El operador OR se usa para combinar multiples condiciones pero a diferencia,
+                del AND solo requiere que una condicion se cumpla.
+
+                SELECT * FROM movies
+                WHERE genre = 'comedy'
+                OR year < 1980;
+    
