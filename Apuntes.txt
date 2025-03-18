@@ -9,6 +9,15 @@ En SQL es una convencion escribir los comandos en mayuculas y las variables , et
 La identacion en SQL es de 4 espacios asi en cada nivel de anidacion deberemos emplear 4 espacios.
 
 
+Para conectar tablas en una consulta se usa el comando JOIN, conectandolas por las llaves primarias y foraneas y ON 
+indica el tipo de JOIN que se usara en los casos en que la condicion sea verdadera.
+
+    SELECT * FROM albums 
+    JOIN artist ON 
+        albums.artist_id = artists.id;
+
+
+
 COMANDOS BASICOS:
 
     Crear una tabla:
