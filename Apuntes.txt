@@ -6,6 +6,8 @@ SQL: por sus siglas en ingles Strcutured Query Language y en español lenguaje d
 En SQL es una convencion escribir los comandos en mayuculas y las variables , etc en minusculas
 
 
+La identacion en SQL es de 4 espacios asi en cada nivel de anidacion deberemos emplear 4 espacios.
+
 
 COMANDOS BASICOS:
 
@@ -255,4 +257,39 @@ COMANDOS BASICOS:
         Aqui podemos ver que el ID llave primaria de cada tabla es unico, pero en la columna ID_Artista
         que es la llave foranea se repite el 3, esto se debe porque ambos albumes son de un mismo artista, y de esta forma
         se relacionan las dos tablas.
+
+
+
+TIPOS DE SENTENCIAS EN SQL:
+
+    SELECT recuperar informacion
+    INSERT añadir filas
+    DELETE eliminar filas 
+    UPDATE modificar filas
+
+
+
+    Sentencias de definicion de datos (Lenguaje de definicion de datos LDD):
+
+    CREATE crear objetos de base de datos
+    DROP eliminar objetos de base de datos 
+    ALTER modificar objeto de base de datos
+
+
+
+
+
+TIPOS DE DATOS :
+
+    CHAR(longitud): se utiliza para guardar cadenas de caracteres de longitud fija especificada entre parentesis. 
+    el espacio no utilizado se rellena con blanco.
+
+    VARCHAR(longitud): almacena cadenas de caracteres de longitud variable cuyo limite maximo es especifica Longitud
+
+    NUMBER(escala, precision): se usa para almacenar datos numericos. La escala indica el numero total de digitos y la precision
+    el numero de posiciones decimales.
+
+    DATE: almacena fechas. En algunos SGDBR se puede almacenar tb a hora.
+
+
 
