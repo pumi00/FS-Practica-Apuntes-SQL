@@ -1,0 +1,74 @@
+CASE:
+    Para poder usar el CASE ponemos de ejemplo este:
+
+        Este kata trata sobre multiplicar un número dado por ocho si es un número par y por nueve en caso contrario."
+
+En otras palabras, si el número es par, lo multiplicas por 8, y si es impar, lo multiplicas por 9.
+
+Por ejemplo:
+
+Si el número es 4 (par) → 
+4
+×
+8
+=
+32
+4×8=32
+Si el número es 5 (impar) → 
+5
+×
+9
+=
+45
+5×9=45
+
+
+Para poder resolverlo usaremos el CASE para decirle que en 'caso' de haga una cosa o otra:
+
+    SELECT number,
+            CASE    
+                WHEN number % 2 = 0 THEN number * 8
+                ELSE number * 9
+            END AS res
+    FROM multiplication
+
+
+    Seleccionamos la columna que queremos modificar y aplicarle el case, luego accedemos desde la tabla 
+    que queramos modificar, que en este caso es multiplication
+
+    En el caso del WHEN hemos hecho que averigue si el number es par haciendo el multiplo de 2 e igualandolo 
+    a 0 para que si es igual a 0 el modulo de 2 es True, por lo tanto es multiplo de 2 y si es asi se multiplica por 8
+    sino lo multiplicamos por 9.
+
+
+
+
+
+WHERE 
+
+    La cláusula WHERE se usa para filtrar los resultados de una consulta en SQL.
+    El operador NOT IN se usa dentro del WHERE para excluir ciertos valores de una columna.
+
+    Ejemplo de uso del WHERE con el NOT IN:
+
+        SELECT country FROM travelers
+        WHERE country NOT IN ('Canada', 'USA', 'Mexico');
+
+        ¿Porque el WHERE va despues del FROM y no antes?:
+
+            FROM → Especifica de qué tabla se tomarán los datos y al haber seleccionado la tabla con la que queremos filtrar los 
+            datos podremos usar el WHERE → Filtra los datos después de haber seleccionado la tabla.
+            De esta manera podremos saber que el WHERE debe ir después de FROM porque primero SQL necesita saber de dónde sacar los datos antes de poder filtrarlos.
+
+
+    Luego otro ejemplo de WHERE es sin el NOT IN que en este caso nos piden:
+        En tu aplicación, hay una sección solo para adultos. 
+        Necesitas obtener una lista con los nombres y edades de los usuarios de la tabla users que tengan 18 años o más.
+
+            SELECT name, age
+            FROM users
+            WHERE age >= 18;
+
+        De esta manera accederemos a la tabla users y podremos filtrar los usuarios por edad que superen los 18
+
+
