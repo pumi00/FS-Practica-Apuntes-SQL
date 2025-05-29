@@ -140,5 +140,5 @@ CREATE TABLE:
 
     Ejemplo de tabla generada para calcular hipotenusa en base a dos lados de triangulos de un triangulo
 
-    ![alt text](SQL/imagenes/image-1.png)
+    ![alt text](/SQL/imagenes/image-1.png)
 
