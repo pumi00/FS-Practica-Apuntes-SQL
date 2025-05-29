@@ -45,7 +45,7 @@ Introudccion a SQL
         ellos la vende.
 
 
-        ![alt text](/SQL/imagenes/image.png)
+        ![alt text](imagenes/image.png)
 
 
 
@@ -140,5 +140,5 @@ CREATE TABLE:
 
     Ejemplo de tabla generada para calcular hipotenusa en base a dos lados de triangulos de un triangulo
 
-    ![alt text](/SQL/imagenes/image-1.png)
+    ![alt text](imagenes/image-1.png)
 
